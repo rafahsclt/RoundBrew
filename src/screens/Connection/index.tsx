@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useCallback } from 'react'
+import { useNavigation } from '@react-navigation/native'
 
 import Button from '../../components/Button'
 import Header from '../../components/Header'
@@ -7,6 +8,12 @@ import UndecoratedButton from '../../components/UndecoratedButton'
 import { Container, Title, Description } from './styles'
 
 const Connection: React.FC = () => {
+    const { navigate } = useNavigation()
+
+    const navigateToBluetooth = useCallback(() => {
+        navigate('Bluetooth')
+    }, [navigate])
+
     return (
         <Container>
             <Header title="Connections" />
@@ -18,7 +25,7 @@ const Connection: React.FC = () => {
             />
             <Button 
                 buttonText="Bluetooth Low Energy" 
-                onPress={() => {}}
+                onPress={navigateToBluetooth}
             />
             <UndecoratedButton 
                 buttonText="Visualizar receitas"

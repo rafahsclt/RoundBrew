@@ -3,6 +3,7 @@ import { NavigationContainer } from '@react-navigation/native'
 import { createStackNavigator } from '@react-navigation/stack'
 
 import Connection from '../screens/Connection'
+import Bluetooth from '../screens/Bluetooth'
 
 const AppStack = createStackNavigator()
 
@@ -15,6 +16,7 @@ const Routes: React.FC = () => {
                 }}
             >
                 <AppStack.Screen name="Connection" component={Connection} />
+                <AppStack.Screen name="Bluetooth" component={Bluetooth} />
             </AppStack.Navigator>
         </NavigationContainer>
     )
