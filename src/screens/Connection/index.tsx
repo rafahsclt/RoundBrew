@@ -10,27 +10,20 @@ import { Container, Title, Description } from './styles'
 const Connection: React.FC = () => {
     const { navigate } = useNavigation()
 
-    const navigateToBluetooth = useCallback(() => {
-        navigate('Bluetooth')
-    }, [navigate])
-
     return (
         <Container>
             <Header title="Connections" />
             <Title>Bem-vindo</Title>
             <Description>Escolha o tipo de conexão</Description>
             <Button 
-                buttonText="Wifi" 
                 onPress={() => {}}
-            />
+            >Wifi</Button>
             <Button 
-                buttonText="Bluetooth Low Energy" 
-                onPress={navigateToBluetooth}
-            />
+                onPress={() => navigate('Bluetooth')}
+            >Bluetooth Low Energy</Button>
             <UndecoratedButton 
-                buttonText="Visualizar receitas"
-                onPress={() => {}}
-            />
+                onPress={() => navigate('Recipe')}
+            >Visualizar Receitar</UndecoratedButton>
         </Container>
     )
 }

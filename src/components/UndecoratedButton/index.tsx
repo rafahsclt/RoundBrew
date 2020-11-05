@@ -3,14 +3,10 @@ import { TouchableOpacityProps } from 'react-native'
 
 import { ActionButton, ActionText } from './styles'
 
-interface ButtonProps extends TouchableOpacityProps {
-    buttonText: string
-}
-
-const Button: React.FC<ButtonProps> = ({ buttonText, ...rest }) => {
+const Button: React.FC<TouchableOpacityProps> = ({ children, ...rest }) => {
     return (
         <ActionButton {...rest} >
-            <ActionText>{buttonText}</ActionText>
+            <ActionText>{children}</ActionText>
         </ActionButton>
     )
 }

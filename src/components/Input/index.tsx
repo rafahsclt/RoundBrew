@@ -13,9 +13,7 @@ const Input: React.FC<InputProps> = ({ name, icon, ...rest}) => {
         <Container>
             <TextInput
                 {...rest}
-            >
-                
-            </TextInput>
+            />
         </Container>
     )
 }
