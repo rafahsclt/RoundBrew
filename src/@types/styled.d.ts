@@ -10,7 +10,8 @@ declare module 'styled-components' {
             title: string,
             text: string,
             inputText: string,
-            inputBackground: string
+            inputBackground: string,
+            recipeText: string
         }
     }
 }

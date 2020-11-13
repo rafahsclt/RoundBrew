@@ -8,6 +8,7 @@ export default {
         title: '#13131a',
         text: '#fff',
         inputText: '#737380',
-        inputBackground: '#dadada'
+        inputBackground: '#dadada',
+        recipeText: '#41414d'
     }
 }
