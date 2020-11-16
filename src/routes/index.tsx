@@ -6,6 +6,7 @@ import firebase from '@react-native-firebase/app'
 import Connection from '../screens/Connection'
 import Bluetooth from '../screens/Bluetooth'
 import Recipe from '../screens/Recipe'
+import RecipeDetails from '../screens/RecipeDetails'
 
 import firebaseConfig from '../config/firebaseConfig'
 
@@ -29,6 +30,7 @@ const Routes: React.FC = () => {
                 <AppStack.Screen name="Recipe" component={Recipe} />
                 <AppStack.Screen name="Connection" component={Connection} />
                 <AppStack.Screen name="Bluetooth" component={Bluetooth} />
+                <AppStack.Screen name="RecipeDetails" component={RecipeDetails} />
             </AppStack.Navigator>
         </NavigationContainer>
     )

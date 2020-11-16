@@ -1,11 +1,11 @@
-import React, { useState, useEffect, useContext } from 'react'
+import React, { useState, useEffect, useContext, useCallback } from 'react'
 import { FlatList, ActivityIndicator } from 'react-native'
 import Icon from 'react-native-vector-icons/Feather'
 import { useNavigation } from '@react-navigation/native'
 import { ThemeContext } from 'styled-components/native'
-import { BleManager } from 'react-native-ble-plx'
 import database from '@react-native-firebase/database';
 
+import { useRecipe } from '../../hooks/useRecipe'
 import Header from '../../components/Header'
 import Button from '../../components/Button'
 import { Container, Loading, Content, KeyText, ValueText, RecipeDetail, DetailText } from './styles'
@@ -13,22 +13,32 @@ import { Container, Loading, Content, KeyText, ValueText, RecipeDetail, DetailTe
 import IRecipe from '../../_types/Recipe'
 
 const Recipe: React.FC = () => {
-    const [recipes, setRecipes] = useState<IRecipe[]>([])
     const [searching, setSearching] = useState(true)
+    const { recipes, setRecipes, setSelectedRecipe } = useRecipe()
 
     const { colors } = useContext(ThemeContext)
+    const { navigate } = useNavigation()
+
+    const viewRecipeDetails = useCallback((recipe) => {
+        setSelectedRecipe(recipe)
+        navigate('RecipeDetails')
+    }, [])
 
     useEffect(() => {
         async function searchOnFirebase() {
-            const reference = await database().ref('recipes').once('value')
+            const data = (await database().ref('recipes').once('value')).toJSON()
+            
+            if(data) {
+                const recipesArray: IRecipe[] = []
+    
+                Object.entries(data).forEach((ref) => {
+                    recipesArray.push(ref[1])
+                }) 
 
-            const recipesArray: IRecipe[] = []
-
-            reference.forEach((ref: IRecipe) => {
-                recipesArray.push(ref)
-            }) 
-
-            setRecipes(recipesArray)
+                console.log(recipesArray)
+    
+                setRecipes(recipesArray) 
+            }
         }
 
         searchOnFirebase()
@@ -61,7 +71,9 @@ const Recipe: React.FC = () => {
                             <ValueText><KeyText>Nome : </KeyText>{recipe.beerName}</ValueText>
                             <ValueText><KeyText>Fermento : </KeyText>{recipe.yeast}</ValueText>
                             <ValueText><KeyText>Quantidade de Rampas : </KeyText>{recipe.ramps.quantityRamps}</ValueText>
-                            <RecipeDetail>
+                            <RecipeDetail
+                                onPress={() => viewRecipeDetails(recipe)}
+                            >
                                 <DetailText>Ver mais detalhes</DetailText>
                                 <Icon name="arrow-right" size={14} color={colors.primary} />
                             </RecipeDetail>

@@ -1,16 +1,22 @@
 import React, { createContext, useContext, useState } from 'react'
 
+import IRecipe from '../_types/Recipe'
+
 interface IRecipeContext {
-    
+    recipes: IRecipe[]
+    setRecipes(recipes: IRecipe[]): void
+    selectedRecipe: IRecipe
+    setSelectedRecipe(recipe: IRecipe): void
 }
 
 const RecipeContext = createContext<IRecipeContext>({} as IRecipeContext)
 
 const RecipeProvider: React.FC = ({ children }) => {
-    
+    const [recipes, setRecipes] = useState<IRecipe[]>([])
+    const [selectedRecipe, setSelectedRecipe] = useState<IRecipe>({} as IRecipe)
 
     return (
-        <RecipeContext.Provider value={{  }}>
+        <RecipeContext.Provider value={{ recipes, setRecipes, selectedRecipe, setSelectedRecipe }}>
             {children}
         </RecipeContext.Provider>
     )

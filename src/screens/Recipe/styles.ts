@@ -3,6 +3,7 @@ import styled from 'styled-components/native'
 export const Container = styled.View`
     flex: 1;
     padding: 20px 24px 0;
+    background: ${props => props.theme.colors.background};
 `
 export const Loading = styled.View`
     flex: 1;
@@ -26,9 +27,10 @@ export const ValueText = styled.Text`
     color: ${props => props.theme.colors.recipeText};
 `
 
-export const RecipeDetail = styled.TouchableHighlight`
+export const RecipeDetail = styled.TouchableOpacity`
     margin-top: 5px;
-    border: 1px solid;
+    border-style: solid;
+    border-top-width: 1px;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
