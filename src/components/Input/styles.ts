@@ -7,6 +7,7 @@ export const Container = styled.View`
     background: ${props => props.theme.colors.inputBackground};
     border-radius: 10px;
     margin-bottom: 8px;
+    position: relative;
 `
 
 export const TextInput = styled.TextInput`

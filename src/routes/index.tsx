@@ -7,6 +7,7 @@ import Connection from '../screens/Connection'
 import Bluetooth from '../screens/Bluetooth'
 import Recipe from '../screens/Recipe'
 import RecipeDetails from '../screens/RecipeDetails'
+import CreateRecipe from '../screens/CreateRecipe'
 
 import firebaseConfig from '../config/firebaseConfig'
 
@@ -31,6 +32,7 @@ const Routes: React.FC = () => {
                 <AppStack.Screen name="Bluetooth" component={Bluetooth} />
                 <AppStack.Screen name="Recipe" component={Recipe} />
                 <AppStack.Screen name="RecipeDetails" component={RecipeDetails} />
+                <AppStack.Screen name="CreateRecipe" component={CreateRecipe} />
             </AppStack.Navigator>
         </NavigationContainer>
     )

@@ -22,7 +22,12 @@ const Recipe: React.FC = () => {
     const viewRecipeDetails = useCallback((recipe) => {
         setSelectedRecipe(recipe)
         navigate('RecipeDetails')
-    }, [])
+    }, [setSelectedRecipe, navigate])
+
+    const createNewRecipe = useCallback(() => {
+        setSelectedRecipe({} as IRecipe)
+        navigate('CreateRecipe')
+    }, [setSelectedRecipe, navigate])
 
     useEffect(() => {
         async function searchOnFirebase() {
@@ -50,7 +55,7 @@ const Recipe: React.FC = () => {
         <Container>
             <Header title="Receitas" iconName="arrow-left" />
             <Button
-                onPress={() => {}}
+                onPress={createNewRecipe}
             >Nova Receita</Button>
             
             {searching ? (
