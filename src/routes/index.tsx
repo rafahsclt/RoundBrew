@@ -27,9 +27,9 @@ const Routes: React.FC = () => {
                     headerShown: false
                 }}
             >
-                <AppStack.Screen name="Recipe" component={Recipe} />
                 <AppStack.Screen name="Connection" component={Connection} />
                 <AppStack.Screen name="Bluetooth" component={Bluetooth} />
+                <AppStack.Screen name="Recipe" component={Recipe} />
                 <AppStack.Screen name="RecipeDetails" component={RecipeDetails} />
             </AppStack.Navigator>
         </NavigationContainer>

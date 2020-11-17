@@ -37,7 +37,7 @@ const Recipe: React.FC = () => {
 
                 console.log(recipesArray)
     
-                setRecipes(recipesArray) 
+                setRecipes(recipesArray)
             }
         }
 

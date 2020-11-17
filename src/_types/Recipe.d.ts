@@ -6,6 +6,8 @@ export default interface IRecipe {
     yeast: string
     ramps: IRamps
     malts: IMalts
+    hops: IHops
+    hopsTime: IHopsTime
 }
 
 interface IRamps {
