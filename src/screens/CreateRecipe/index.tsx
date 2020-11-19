@@ -14,7 +14,7 @@ const CreateRecipe: React.FC = () => {
                 title="Nova receita"
                 iconName="arrow-left"
             />
-            { page === 0 && <FirstList />}
+            { page === 0 && <FirstList setPage={setPage} />}
         </Container>
     )
 }

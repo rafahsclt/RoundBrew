@@ -15,6 +15,8 @@ const RecipeProvider: React.FC = ({ children }) => {
     const [recipes, setRecipes] = useState<IRecipe[]>([])
     const [selectedRecipe, setSelectedRecipe] = useState<IRecipe>({} as IRecipe)
 
+    
+
     return (
         <RecipeContext.Provider value={{ recipes, setRecipes, selectedRecipe, setSelectedRecipe }}>
             {children}
