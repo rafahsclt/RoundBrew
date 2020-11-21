@@ -2,13 +2,14 @@ import styled, { css } from 'styled-components/native'
 
 interface ButtonProps {
     isEnable: boolean
+    width: string
 }
 
 export const ActionButton = styled.TouchableOpacity<ButtonProps>`
     background-color: ${props => props.theme.colors.primary};
     border-radius: 12px;
     height: 50px;
-    width: 100%;
+    width: ${props => props.width};
     justify-content: center;
     align-items: center;
     margin-bottom: 20px;

@@ -2,25 +2,29 @@ import React, { useCallback, useRef } from 'react'
 import { View, KeyboardAvoidingView, ScrollView, Platform, TextInput } from 'react-native'
 import { Form } from '@unform/mobile'
 import { FormHandles } from '@unform/core'
+import { useRecipe } from '../../hooks/useRecipe'
 
 import Input from '../../components/Input'
 import Button from '../../components/Button'
-
+import { INRListOne } from '../../_types/NRList'
 import { Title } from './styles'
 
 interface IPage {
     setPage(n: number): void
 }
 
-const FirstList: React.FC<IPage> = ({ setPage, ...rest}) => {
+const FirstList: React.FC<IPage> = ({ setPage }) => {
     const formRef = useRef<FormHandles>(null)
+
+    const { NRListOne, setNRListOne } = useRecipe()
 
     const yeastRef = useRef<TextInput>(null)
     const brewRef = useRef<TextInput>(null)
     const maturationRef = useRef<TextInput>(null)
 
-    const handleSubmit = useCallback((data: object) => {
-        setPage(2)
+    const handleSubmit = useCallback((data: INRListOne) => {
+        setPage(1)
+        setNRListOne(data)
         console.log(data)
     }, [])
 
@@ -45,6 +49,8 @@ const FirstList: React.FC<IPage> = ({ setPage, ...rest}) => {
                         tag="beerName"
                         returnKeyType="next"
                         onSubmitEditing={() => yeastRef.current?.focus()}
+                        defaultValue={NRListOne.beerName}
+                        initialFilled={!!NRListOne.beerName}
                     />
                     <Input
                         ref={yeastRef}
@@ -52,6 +58,8 @@ const FirstList: React.FC<IPage> = ({ setPage, ...rest}) => {
                         tag="yeast"
                         returnKeyType="next"
                         onSubmitEditing={() => brewRef.current?.focus()}
+                        defaultValue={NRListOne.yeast}
+                        initialFilled={!!NRListOne.yeast}
                     />
                     <Input
                         ref={brewRef}
@@ -59,6 +67,8 @@ const FirstList: React.FC<IPage> = ({ setPage, ...rest}) => {
                         tag="brewTime"
                         returnKeyType="next"
                         onSubmitEditing={() => yeastRef.current?.focus()}
+                        defaultValue={NRListOne.brewTime?.toString()}
+                        initialFilled={!!NRListOne.brewTime}
                     />
                     <Input
                         ref={maturationRef}
@@ -66,6 +76,8 @@ const FirstList: React.FC<IPage> = ({ setPage, ...rest}) => {
                         tag="maturationTime"
                         returnKeyType="route"
                         onSubmitEditing={() => formRef.current?.submitForm()}
+                        defaultValue={NRListOne.maturationTime?.toString()}
+                        initialFilled={!!NRListOne.maturationTime}
                     />
                     
                     </View>

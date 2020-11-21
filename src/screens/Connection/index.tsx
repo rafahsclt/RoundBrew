@@ -23,7 +23,7 @@ const Connection: React.FC = () => {
             >Bluetooth Low Energy</Button>
             <UndecoratedButton 
                 onPress={() => navigate('Recipe')}
-            >Visualizar Receitar</UndecoratedButton>
+            >Visualizar Receitas</UndecoratedButton>
         </Container>
     )
 }

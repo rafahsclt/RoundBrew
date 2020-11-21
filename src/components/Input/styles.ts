@@ -3,10 +3,11 @@ import styled, { css } from 'styled-components/native'
 interface FocusedProps {
     isFocused: boolean
     isFilled: boolean
+    width?: string
 }
 
 export const Container = styled.View<FocusedProps>`
-    width: 100%;
+    width: ${props => props.width};
     height: 60px;
     padding: 0 16px;
     margin: 20px 2px;
@@ -23,7 +24,7 @@ export const Container = styled.View<FocusedProps>`
 
 export const TextInput = styled.TextInput`
     flex: 1;
-    
+    font-size: 16px;
 `
 
 export const LabelView = styled.View<FocusedProps>`

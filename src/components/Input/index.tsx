@@ -1,4 +1,4 @@
-import React, { useState, useCallback, useEffect, useRef, useImperativeHandle, forwardRef } from 'react'
+import React, { useState, useCallback, useEffect, useRef, useImperativeHandle, forwardRef, useMemo } from 'react'
 import { TextInputProps, Text } from 'react-native'
 import { useField } from '@unform/core'
 
@@ -8,6 +8,8 @@ interface InputProps extends TextInputProps {
     name: string
     tag: string
     icon?: string
+    initialFilled?: boolean
+    width?: string
 }
 
 interface InputValueReference {
@@ -18,14 +20,14 @@ interface InputRef {
     focus(): void
 }
 
-const Input: React.RefForwardingComponent<InputRef, InputProps> = ({ name, tag, icon, ...rest }, ref) => {
-    const [isFocused, setIsFocused] = useState(false)
-    const [isFilled, setIsFilled] = useState(false)
+const Input: React.RefForwardingComponent<InputRef, InputProps> = ({ name, tag, icon, initialFilled = false, defaultValue, width='100%',...rest }, ref) => {
 
+    const { registerField, fieldName, error } = useField(tag)
     const inputElementRef = useRef<any>(null)
+    const inputValueRef = useRef<InputValueReference>({ value: '' })
 
-    const { registerField, fieldName, defaultValue, error } = useField(tag)
-    const inputValueRef = useRef<InputValueReference>({ value: ''})
+    const [isFocused, setIsFocused] = useState(false)
+    const [isFilled, setIsFilled] = useState(initialFilled)
 
     useImperativeHandle(ref, () => ({ 
         focus() {
@@ -57,12 +59,18 @@ const Input: React.RefForwardingComponent<InputRef, InputProps> = ({ name, tag, 
                 inputElementRef.current.clear()
             }
         })
+        
+        if(defaultValue) {
+            inputValueRef.current.value = defaultValue
+            inputElementRef.current.setNativeProps({ text: defaultValue })
+        }
     }, [fieldName, registerField])
 
     return (
         <Container
             isFocused={isFocused}
             isFilled={isFilled}
+            width={width}
         >
             <LabelView
                 isFocused={isFocused}
@@ -78,7 +86,6 @@ const Input: React.RefForwardingComponent<InputRef, InputProps> = ({ name, tag, 
                 onFocus={handleInputFocus}
                 onBlur={handleInputBlur}
                 onChangeText={value => inputValueRef.current.value = value}
-                defaultValue={defaultValue}
                 autoCorrect={false}
                 {...rest}
             />

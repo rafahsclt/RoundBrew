@@ -15,7 +15,7 @@ export const Content = styled.View`
     padding: 10px;
     border: 1px solid;
     border-radius: 8px;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 `
 
 export const KeyText = styled.Text`
@@ -28,7 +28,8 @@ export const ValueText = styled.Text`
 `
 
 export const RecipeDetail = styled.TouchableOpacity`
-    margin-top: 5px;
+    margin-top: 8px;
+    padding-top: 5px;
     border-style: solid;
     border-top-width: 1px;
     flex-direction: row;
