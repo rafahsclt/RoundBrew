@@ -71,8 +71,7 @@ const MaltList: React.FC<IPage> = ({ setPage }) => {
                                     width="47%"
                                     returnKeyType="next"
                                     onSubmitEditing={() => refWeightMaltOne.current?.focus()}
-                                    defaultValue={NRListTwo.nameMaltOne}
-                                    initialFilled={!!NRListTwo.nameMaltOne}
+                                    defaultValue={NRListTwo.nameMaltOne}                                    
                                 />
                                 <Input
                                     ref={refWeightMaltOne}
@@ -81,8 +80,7 @@ const MaltList: React.FC<IPage> = ({ setPage }) => {
                                     width="47%"
                                     returnKeyType="next"
                                     onSubmitEditing={() => refNameMaltTwo.current?.focus()}
-                                    defaultValue={NRListTwo.weightMaltOne?.toString()}
-                                    initialFilled={!!NRListTwo.weightMaltOne}
+                                    defaultValue={NRListTwo.weightMaltOne?.toString()}                                    
                                 />
                             </DoubleContainer>
                         )}
@@ -95,8 +93,7 @@ const MaltList: React.FC<IPage> = ({ setPage }) => {
                                     width="47%"
                                     returnKeyType="next"
                                     onSubmitEditing={() => refWeightMaltTwo.current?.focus()}
-                                    defaultValue={NRListTwo.nameMaltTwo}
-                                    initialFilled={!!NRListTwo.nameMaltTwo}
+                                    defaultValue={NRListTwo.nameMaltTwo}                                    
                                 />
                                 <Input
                                     ref={refWeightMaltTwo}
@@ -105,8 +102,7 @@ const MaltList: React.FC<IPage> = ({ setPage }) => {
                                     width="47%"
                                     returnKeyType="next"
                                     onSubmitEditing={() => refNameMaltThree.current?.focus()}
-                                    defaultValue={NRListTwo.weightMaltTwo?.toString()}
-                                    initialFilled={!!NRListTwo.weightMaltTwo}
+                                    defaultValue={NRListTwo.weightMaltTwo?.toString()}                                    
                                 />
                             </DoubleContainer>
                         )}
@@ -118,8 +114,7 @@ const MaltList: React.FC<IPage> = ({ setPage }) => {
                                     width="47%"
                                     returnKeyType="next"
                                     onSubmitEditing={() => refWeightMaltThree.current?.focus()}
-                                    defaultValue={NRListTwo.nameMaltThree}
-                                    initialFilled={!!NRListTwo.nameMaltThree}
+                                    defaultValue={NRListTwo.nameMaltThree}                                    
                                 />
                                 <Input
                                     ref={refWeightMaltThree}
@@ -128,8 +123,7 @@ const MaltList: React.FC<IPage> = ({ setPage }) => {
                                     width="47%"
                                     returnKeyType="next"
                                     onSubmitEditing={() => refNameMaltFour.current?.focus()}
-                                    defaultValue={NRListTwo.weightMaltThree?.toString()}
-                                    initialFilled={!!NRListTwo.weightMaltThree}
+                                    defaultValue={NRListTwo.weightMaltThree?.toString()}                                    
                                 />
                             </DoubleContainer>
                         )}
@@ -141,8 +135,7 @@ const MaltList: React.FC<IPage> = ({ setPage }) => {
                                     width="47%"
                                     returnKeyType="next"
                                     onSubmitEditing={() => refWeightMaltFour.current?.focus()}
-                                    defaultValue={NRListTwo.nameMaltFour}
-                                    initialFilled={!!NRListTwo.nameMaltFour}
+                                    defaultValue={NRListTwo.nameMaltFour}                                    
                                 />
                                 <Input
                                     ref={refWeightMaltFour}
@@ -151,8 +144,7 @@ const MaltList: React.FC<IPage> = ({ setPage }) => {
                                     width="47%"
                                     returnKeyType="next"
                                     onSubmitEditing={() => refNameMaltFive.current?.focus()}
-                                    defaultValue={NRListTwo.weightMaltFour?.toString()}
-                                    initialFilled={!!NRListTwo.weightMaltFour}
+                                    defaultValue={NRListTwo.weightMaltFour?.toString()}                                    
                                 />
                             </DoubleContainer>
                         )}
@@ -164,8 +156,7 @@ const MaltList: React.FC<IPage> = ({ setPage }) => {
                                     width="47%"
                                     returnKeyType="next"
                                     onSubmitEditing={() => refWeightMaltFive.current?.focus()}
-                                    defaultValue={NRListTwo.nameMaltFive}
-                                    initialFilled={!!NRListTwo.nameMaltFive}
+                                    defaultValue={NRListTwo.nameMaltFive}                                    
                                 />
                                 <Input
                                     ref={refWeightMaltFive}
@@ -174,8 +165,7 @@ const MaltList: React.FC<IPage> = ({ setPage }) => {
                                     width="47%"
                                     returnKeyType="next"
                                     onSubmitEditing={() => formRef.current?.submitForm()}
-                                    defaultValue={NRListTwo.weightMaltFive?.toString()}
-                                    initialFilled={!!NRListTwo.weightMaltFive}
+                                    defaultValue={NRListTwo.weightMaltFive?.toString()}                                    
                                 />
                             </DoubleContainer>
                         )}

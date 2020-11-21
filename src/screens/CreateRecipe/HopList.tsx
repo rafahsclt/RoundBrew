@@ -71,8 +71,7 @@ const HopList: React.FC<IPage> = ({ setPage }) => {
                                     width="47%"
                                     returnKeyType="next"
                                     onSubmitEditing={() => refWeightHopOne.current?.focus()}
-                                    defaultValue={NRListThree.nameHopOne}
-                                    initialFilled={!!NRListThree.nameHopOne}
+                                    defaultValue={NRListThree.nameHopOne}                                    
                                 />
                                 <Input
                                     ref={refWeightHopOne}
@@ -81,8 +80,7 @@ const HopList: React.FC<IPage> = ({ setPage }) => {
                                     width="47%"
                                     returnKeyType="next"
                                     onSubmitEditing={() => refNameHopTwo.current?.focus()}
-                                    defaultValue={NRListThree.weightHopOne?.toString()}
-                                    initialFilled={!!NRListThree.weightHopOne}
+                                    defaultValue={NRListThree.weightHopOne?.toString()}                                    
                                 />
                             </DoubleContainer>
                         )}
@@ -95,8 +93,7 @@ const HopList: React.FC<IPage> = ({ setPage }) => {
                                     width="47%"
                                     returnKeyType="next"
                                     onSubmitEditing={() => refWeightHopTwo.current?.focus()}
-                                    defaultValue={NRListThree.nameHopThree}
-                                    initialFilled={!!NRListThree.nameHopTwo}
+                                    defaultValue={NRListThree.nameHopThree}                                    
                                 />
                                 <Input
                                     ref={refWeightHopTwo}
@@ -105,8 +102,7 @@ const HopList: React.FC<IPage> = ({ setPage }) => {
                                     width="47%"
                                     returnKeyType="next"
                                     onSubmitEditing={() => refNameHopThree.current?.focus()}
-                                    defaultValue={NRListThree.weightHopTwo?.toString()}
-                                    initialFilled={!!NRListThree.weightHopTwo}
+                                    defaultValue={NRListThree.weightHopTwo?.toString()}                                    
                                 />
                             </DoubleContainer>
                         )}
@@ -118,8 +114,7 @@ const HopList: React.FC<IPage> = ({ setPage }) => {
                                     width="47%"
                                     returnKeyType="next"
                                     onSubmitEditing={() => refWeightHopThree.current?.focus()}
-                                    defaultValue={NRListThree.nameHopThree}
-                                    initialFilled={!!NRListThree.nameHopThree}
+                                    defaultValue={NRListThree.nameHopThree}                                    
                                 />
                                 <Input
                                     ref={refWeightHopThree}
@@ -128,8 +123,7 @@ const HopList: React.FC<IPage> = ({ setPage }) => {
                                     width="47%"
                                     returnKeyType="next"
                                     onSubmitEditing={() => refNameHopFour.current?.focus()}
-                                    defaultValue={NRListThree.weightHopThree?.toString()}
-                                    initialFilled={!!NRListThree.weightHopThree}
+                                    defaultValue={NRListThree.weightHopThree?.toString()}                                    
                                 />
                             </DoubleContainer>
                         )}
@@ -141,8 +135,7 @@ const HopList: React.FC<IPage> = ({ setPage }) => {
                                     width="47%"
                                     returnKeyType="next"
                                     onSubmitEditing={() => refWeightHopFour.current?.focus()}
-                                    defaultValue={NRListThree.nameHopFour}
-                                    initialFilled={!!NRListThree.nameHopFour}
+                                    defaultValue={NRListThree.nameHopFour}                                    
                                 />
                                 <Input
                                     ref={refWeightHopFour}
@@ -151,8 +144,7 @@ const HopList: React.FC<IPage> = ({ setPage }) => {
                                     width="47%"
                                     returnKeyType="next"
                                     onSubmitEditing={() => refNameHopFive.current?.focus()}
-                                    defaultValue={NRListThree.weightHopFour?.toString()}
-                                    initialFilled={!!NRListThree.weightHopFour}
+                                    defaultValue={NRListThree.weightHopFour?.toString()}                                    
                                 />
                             </DoubleContainer>
                         )}
@@ -164,8 +156,7 @@ const HopList: React.FC<IPage> = ({ setPage }) => {
                                     width="47%"
                                     returnKeyType="next"
                                     onSubmitEditing={() => refWeightHopFive.current?.focus()}
-                                    defaultValue={NRListThree.nameHopFive}
-                                    initialFilled={!!NRListThree.nameHopFive}
+                                    defaultValue={NRListThree.nameHopFive}                                    
                                 />
                                 <Input
                                     ref={refWeightHopFive}
@@ -174,8 +165,7 @@ const HopList: React.FC<IPage> = ({ setPage }) => {
                                     width="47%"
                                     returnKeyType="next"
                                     onSubmitEditing={() => formRef.current?.submitForm()}
-                                    defaultValue={NRListThree.weightHopFive?.toString()}
-                                    initialFilled={!!NRListThree.weightHopFive}
+                                    defaultValue={NRListThree.weightHopFive?.toString()}                                    
                                 />
                             </DoubleContainer>
                         )}

@@ -49,8 +49,7 @@ const FirstList: React.FC<IPage> = ({ setPage }) => {
                         tag="beerName"
                         returnKeyType="next"
                         onSubmitEditing={() => yeastRef.current?.focus()}
-                        defaultValue={NRListOne.beerName}
-                        initialFilled={!!NRListOne.beerName}
+                        defaultValue={NRListOne.beerName}                        
                     />
                     <Input
                         ref={yeastRef}
@@ -58,8 +57,7 @@ const FirstList: React.FC<IPage> = ({ setPage }) => {
                         tag="yeast"
                         returnKeyType="next"
                         onSubmitEditing={() => brewRef.current?.focus()}
-                        defaultValue={NRListOne.yeast}
-                        initialFilled={!!NRListOne.yeast}
+                        defaultValue={NRListOne.yeast}                        
                     />
                     <Input
                         ref={brewRef}
@@ -67,8 +65,7 @@ const FirstList: React.FC<IPage> = ({ setPage }) => {
                         tag="brewTime"
                         returnKeyType="next"
                         onSubmitEditing={() => yeastRef.current?.focus()}
-                        defaultValue={NRListOne.brewTime?.toString()}
-                        initialFilled={!!NRListOne.brewTime}
+                        defaultValue={NRListOne.brewTime?.toString()}                        
                     />
                     <Input
                         ref={maturationRef}
@@ -76,8 +73,7 @@ const FirstList: React.FC<IPage> = ({ setPage }) => {
                         tag="maturationTime"
                         returnKeyType="route"
                         onSubmitEditing={() => formRef.current?.submitForm()}
-                        defaultValue={NRListOne.maturationTime?.toString()}
-                        initialFilled={!!NRListOne.maturationTime}
+                        defaultValue={NRListOne.maturationTime?.toString()}                        
                     />
                     
                     </View>

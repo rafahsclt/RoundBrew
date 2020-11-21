@@ -7,8 +7,6 @@ import { Container, TextInput, LabelView, Label } from './styles'
 interface InputProps extends TextInputProps {
     name: string
     tag: string
-    icon?: string
-    initialFilled?: boolean
     width?: string
 }
 
@@ -20,14 +18,14 @@ interface InputRef {
     focus(): void
 }
 
-const Input: React.RefForwardingComponent<InputRef, InputProps> = ({ name, tag, icon, initialFilled = false, defaultValue, width='100%',...rest }, ref) => {
+const Input: React.RefForwardingComponent<InputRef, InputProps> = ({ name, tag, defaultValue, width='100%',...rest }, ref) => {
 
     const { registerField, fieldName, error } = useField(tag)
     const inputElementRef = useRef<any>(null)
     const inputValueRef = useRef<InputValueReference>({ value: '' })
 
     const [isFocused, setIsFocused] = useState(false)
-    const [isFilled, setIsFilled] = useState(initialFilled)
+    const [isFilled, setIsFilled] = useState(defaultValue ? true : false)
 
     useImperativeHandle(ref, () => ({ 
         focus() {
