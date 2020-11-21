@@ -17,7 +17,7 @@ const MaltList: React.FC<IPage> = ({ setPage }) => {
     const formRef = useRef<FormHandles>(null)
     const { NRListTwo, setNRListTwo } = useRecipe()
 
-    const [quantityMalts, setQuantityMalts] = useState(NRListTwo.quantityMalts)
+    const [quantityMalts, setQuantityMalts] = useState(NRListTwo.quantityMalts | 1)
 
     const refNameMaltTwo = useRef<TextInput>(null)
     const refNameMaltThree = useRef<TextInput>(null)
@@ -109,6 +109,7 @@ const MaltList: React.FC<IPage> = ({ setPage }) => {
                         {quantityMalts >= 3 && (
                             <DoubleContainer>
                                 <Input
+                                    ref={refNameMaltThree}
                                     name="Nome M3"
                                     tag="nameMaltThree"
                                     width="47%"
@@ -130,6 +131,7 @@ const MaltList: React.FC<IPage> = ({ setPage }) => {
                         {quantityMalts >= 4 && (
                             <DoubleContainer>
                                 <Input
+                                    ref={refNameMaltFour}
                                     name="Nome M4"
                                     tag="nameMaltFour"
                                     width="47%"
@@ -151,6 +153,7 @@ const MaltList: React.FC<IPage> = ({ setPage }) => {
                         {quantityMalts >= 5 && (
                             <DoubleContainer>
                                 <Input
+                                    ref={refNameMaltFive}
                                     name="Nome M5"
                                     tag="nameMaltFive"
                                     width="47%"

@@ -17,7 +17,7 @@ const HopList: React.FC<IPage> = ({ setPage }) => {
     const formRef = useRef<FormHandles>(null)
     const { NRListThree, setNRListThree } = useRecipe()
 
-    const [quantityHops, setQuantityHops] = useState(NRListThree.quantityHops)
+    const [quantityHops, setQuantityHops] = useState(NRListThree.quantityHops | 1)
 
     const refNameHopTwo = useRef<TextInput>(null)
     const refNameHopThree = useRef<TextInput>(null)
@@ -93,7 +93,7 @@ const HopList: React.FC<IPage> = ({ setPage }) => {
                                     width="47%"
                                     returnKeyType="next"
                                     onSubmitEditing={() => refWeightHopTwo.current?.focus()}
-                                    defaultValue={NRListThree.nameHopThree}                                    
+                                    defaultValue={NRListThree.nameHopTwo}                                    
                                 />
                                 <Input
                                     ref={refWeightHopTwo}
@@ -176,14 +176,14 @@ const HopList: React.FC<IPage> = ({ setPage }) => {
                             width="47%"
                             onPress={() => {
                                 formRef.current?.submitForm()
-                                setPage(0)
+                                setPage(1)
                             }}
                         >Anterior</Button>
                         <Button
                             width="47%"
                             onPress={() => {
                                 formRef.current?.submitForm()
-                                setPage(2)
+                                setPage(3)
                             }}
                         >Próximo</Button>
                     </DoubleContainer>
