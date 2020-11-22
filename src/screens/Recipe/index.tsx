@@ -25,7 +25,6 @@ const Recipe: React.FC = () => {
     }, [setSelectedRecipe, navigate])
 
     const createNewRecipe = useCallback(() => {
-        setSelectedRecipe({} as IRecipe)
         navigate('CreateRecipe')
     }, [setSelectedRecipe, navigate])
 

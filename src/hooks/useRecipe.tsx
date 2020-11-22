@@ -9,6 +9,7 @@ interface IRecipeContext {
     recipes: IRecipe[]
     setRecipes(recipes: IRecipe[]): void
     selectedRecipe: IRecipe
+    setSelectedRecipe(recipe: IRecipe): void
     clearSelectedRecipe(): void
     NRListOne: INRListOne
     setNRListOne(value: INRListOne): void
@@ -42,17 +43,15 @@ const RecipeProvider: React.FC = ({ children }) => {
     }, [])
 
     const mountRecipe = useCallback(() => {
-        const newRecipe: IRecipe = {
-            beerName: NRListOne.beerName,
-            yeast: NRListOne.yeast,
-            boilTime: Number(NRListOne.boilTime),
-            brewTime: Number(NRListOne.brewTime),
-            maturationTime: Number(NRListOne.maturationTime),
-            malts: NRListTwo,
-            hops: NRListThree,
-            ramps: NRListFour,
-            hopsTime: NRListFive
-        }
+        const newRecipe = Object.assign(
+            { ...NRListOne },
+            { malts: { ...NRListTwo}},
+            { hops: { ...NRListThree}},
+            { ramps: { ...NRListFour}},
+            { hopstime: {...NRListFive }}
+        )
+
+        console.log(newRecipe)
 
         return newRecipe
     }, [])
@@ -69,10 +68,10 @@ const RecipeProvider: React.FC = ({ children }) => {
 
     return (
         <RecipeContext.Provider 
-            value={{ recipes, setRecipes, selectedRecipe, clearSelectedRecipe,
+            value={{ recipes, setRecipes, selectedRecipe, setSelectedRecipe,
                 NRListOne, setNRListOne, NRListTwo, setNRListTwo, NRListThree,
                 setNRListThree, NRListFour, setNRListFour, NRListFive, 
-                setNRListFive, mountRecipe
+                setNRListFive, mountRecipe, clearSelectedRecipe
             }}>
             {children}
         </RecipeContext.Provider>

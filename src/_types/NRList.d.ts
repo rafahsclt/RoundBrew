@@ -1,7 +1,7 @@
 export interface INRListOne {
     beerName: string
     yeast: string | undefined
-    boilTime: string | undefined
+    boilTime: number | undefined
     brewTime: number | undefined
     maturationTime: number | undefined
 }

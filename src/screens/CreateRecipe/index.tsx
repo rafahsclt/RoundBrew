@@ -25,7 +25,7 @@ const CreateRecipe: React.FC = () => {
     const saveRecipe = useCallback(() => {
         const newRecipe = mountRecipe()
 
-        firebase.database().ref(`recipes/${newRecipe.beerName}`).set(newRecipe)
+       firebase.database().ref(`recipes/${newRecipe.beerName}`).set(newRecipe)
             .then(() => {
                 setSendingRecipe(false)
                 Alert.alert('Aviso :', ('A receita foi salva com sucesso!'))
@@ -47,22 +47,24 @@ const CreateRecipe: React.FC = () => {
                     <Image source={logoImg} style={{ marginBottom: 40 }} />
                     <Button
                         icon="arrow-left"
-                        disabled={!sendingRecipe}
+                        disabled={sendingRecipe}
+                        isEnable={!sendingRecipe}
                         onPress={() => setShowModal(false)}
                     >
                         Voltar
                 </Button>
                     <Button
                         icon="upload-cloud"
-                        disabled={!sendingRecipe}
+                        disabled={sendingRecipe}
+                        isEnable={!sendingRecipe}
                         onPress={saveRecipe}
-
                     >
                         Salvar receita
                 </Button>
                     <Button
                         icon="check"
-                        disabled={!sendingRecipe}
+                        disabled={sendingRecipe}
+                        isEnable={!sendingRecipe}
                     >
                         Fazer essa receita
                 </Button>

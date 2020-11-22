@@ -3,7 +3,7 @@ export default interface IRecipe {
     boilTime: number
     brewTime: number
     maturationTime: number
-    yeast: string | undefined
+    yeast: string | ""
     ramps: IRamps
     malts: IMalts
     hops: IHops
@@ -12,51 +12,51 @@ export default interface IRecipe {
 
 interface IRamps {
     quantityRamps: number
-    tempRampOne: number | undefined
-    tempRampTwo: number  | undefined
-    tempRampThree: number  | undefined
-    tempRampFour: number  | undefined
-    tempRampFive: number  | undefined
-    timeRampOne: number  | undefined
-    timeRampTwo: number  | undefined
-    timeRampThree: number  | undefined
-    timeRampFour: number  | undefined
-    timeRampFive: number  | undefined
+    tempRampOne: number | ""
+    tempRampTwo: number  | ""
+    tempRampThree: number  | ""
+    tempRampFour: number  | ""
+    tempRampFive: number  | ""
+    timeRampOne: number  | ""
+    timeRampTwo: number  | ""
+    timeRampThree: number  | ""
+    timeRampFour: number  | ""
+    timeRampFive: number  | ""
 }
 
 interface IMalts {
     quantityMalts: number
-    nameMaltOne: string | undefined
-    nameMaltTwo: string | undefined
-    nameMaltThree: string | undefined
-    nameMaltFour: string | undefined
-    nameMaltFive: string | undefined
-    weightMaltOne: number | undefined
-    weightMaltTwo: number | undefined
-    weightMaltThree: number | undefined
-    weightMaltFour: number | undefined
-    weightMaltFive: number | undefined
+    nameMaltOne: string | ""
+    nameMaltTwo: string | ""
+    nameMaltThree: string | ""
+    nameMaltFour: string | ""
+    nameMaltFive: string | ""
+    weightMaltOne: number | ""
+    weightMaltTwo: number | ""
+    weightMaltThree: number | ""
+    weightMaltFour: number | ""
+    weightMaltFive: number | ""
 }
 
 interface IHops {
     quantityHops: number
-    nameHopOne: string | undefined
-    nameHopTwo: string | undefined
-    nameHopThree: string | undefined
-    nameHopFour: string | undefined
-    nameHopFive: string | undefined
-    weightHopOne: number | undefined
-    weightHopTwo: number | undefined
-    weightHopThree: number | undefined
-    weightHopFour: number | undefined
-    weightHopFive: number | undefined
+    nameHopOne: string | ""
+    nameHopTwo: string | ""
+    nameHopThree: string | ""
+    nameHopFour: string | ""
+    nameHopFive: string | ""
+    weightHopOne: number | ""
+    weightHopTwo: number | ""
+    weightHopThree: number | ""
+    weightHopFour: number | ""
+    weightHopFive: number | ""
 }
 
 interface IHopsTime {
-    timeHopOne: number | undefined
-    timeHopTwo: number | undefined
-    timeHopThree: number | undefined
-    timeHopFour: number | undefined
-    timeHopFive: number | undefined
+    timeHopOne: number | ""
+    timeHopTwo: number | ""
+    timeHopThree: number | ""
+    timeHopFour: number | ""
+    timeHopFive: number | ""
 }
 
