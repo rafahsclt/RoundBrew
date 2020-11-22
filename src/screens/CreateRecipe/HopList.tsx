@@ -79,7 +79,13 @@ const HopList: React.FC<IPage> = ({ setPage }) => {
                                     tag="weightHopOne"
                                     width="47%"
                                     returnKeyType="next"
-                                    onSubmitEditing={() => refNameHopTwo.current?.focus()}
+                                    onSubmitEditing={() => {
+                                        if(quantityHops !== 1) refNameHopTwo.current?.focus()
+                                        else {
+                                            formRef.current?.submitForm()
+                                            setPage(3)
+                                        }
+                                    }}
                                     defaultValue={NRListThree.weightHopOne?.toString()}                                    
                                 />
                             </DoubleContainer>
@@ -101,7 +107,13 @@ const HopList: React.FC<IPage> = ({ setPage }) => {
                                     tag="weightHopTwo"
                                     width="47%"
                                     returnKeyType="next"
-                                    onSubmitEditing={() => refNameHopThree.current?.focus()}
+                                    onSubmitEditing={() => {
+                                        if(quantityHops !== 2) refNameHopThree.current?.focus()
+                                        else {
+                                            formRef.current?.submitForm()
+                                            setPage(3)
+                                        }
+                                    }}
                                     defaultValue={NRListThree.weightHopTwo?.toString()}                                    
                                 />
                             </DoubleContainer>
@@ -109,6 +121,7 @@ const HopList: React.FC<IPage> = ({ setPage }) => {
                         {quantityHops >= 3 && (
                             <DoubleContainer>
                                 <Input
+                                    ref={refNameHopThree}
                                     name="Nome L3"
                                     tag="nameHopThree"
                                     width="47%"
@@ -122,7 +135,13 @@ const HopList: React.FC<IPage> = ({ setPage }) => {
                                     tag="weightHopThree"
                                     width="47%"
                                     returnKeyType="next"
-                                    onSubmitEditing={() => refNameHopFour.current?.focus()}
+                                    onSubmitEditing={() => {
+                                        if(quantityHops !== 3) refNameHopFour.current?.focus()
+                                        else {
+                                            formRef.current?.submitForm()
+                                            setPage(3)
+                                        }
+                                    }}
                                     defaultValue={NRListThree.weightHopThree?.toString()}                                    
                                 />
                             </DoubleContainer>
@@ -130,6 +149,7 @@ const HopList: React.FC<IPage> = ({ setPage }) => {
                         {quantityHops >= 4 && (
                             <DoubleContainer>
                                 <Input
+                                    ref={refNameHopFour}
                                     name="Nome L4"
                                     tag="nameHopFour"
                                     width="47%"
@@ -143,7 +163,13 @@ const HopList: React.FC<IPage> = ({ setPage }) => {
                                     tag="weightHopFour"
                                     width="47%"
                                     returnKeyType="next"
-                                    onSubmitEditing={() => refNameHopFive.current?.focus()}
+                                    onSubmitEditing={() => {
+                                        if(quantityHops !== 4) refNameHopFive.current?.focus()
+                                        else {
+                                            formRef.current?.submitForm()
+                                            setPage(3)
+                                        }
+                                    }}
                                     defaultValue={NRListThree.weightHopFour?.toString()}                                    
                                 />
                             </DoubleContainer>
@@ -151,6 +177,7 @@ const HopList: React.FC<IPage> = ({ setPage }) => {
                         {quantityHops >= 5 && (
                             <DoubleContainer>
                                 <Input
+                                    ref={refNameHopFive}
                                     name="Nome L5"
                                     tag="nameHopFive"
                                     width="47%"
@@ -164,7 +191,10 @@ const HopList: React.FC<IPage> = ({ setPage }) => {
                                     tag="weightHopFive"
                                     width="47%"
                                     returnKeyType="next"
-                                    onSubmitEditing={() => formRef.current?.submitForm()}
+                                    onSubmitEditing={() => {
+                                        formRef.current?.submitForm()
+                                        setPage(3)
+                                    }}
                                     defaultValue={NRListThree.weightHopFive?.toString()}                                    
                                 />
                             </DoubleContainer>

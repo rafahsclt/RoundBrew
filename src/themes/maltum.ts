@@ -9,6 +9,11 @@ export default {
         text: '#fff',
         inputText: '#737380',
         inputBackground: '#dadada',
-        recipeText: '#41414d'
+        recipeText: '#41414d',
+        disabled: '#9e9e9e'
+    },
+
+    path: {
+        logo: '../../assets/images/light-maltum-logo'
     }
 }

@@ -11,7 +11,12 @@ declare module 'styled-components' {
             text: string,
             inputText: string,
             inputBackground: string,
-            recipeText: string
+            recipeText: string,
+            disabled: string
+        },
+
+        path: {
+            logo: string
         }
     }
 }

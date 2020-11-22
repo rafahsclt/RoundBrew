@@ -44,7 +44,7 @@ const RampList: React.FC<IPage> = ({ setPage }) => {
             <ScrollView
                 contentContainerStyle={{ flex: 1 }}
             >
-                <Title>Quantidade de Lúpulo(s)</Title>
+                <Title>Quantidade de Rampa(s)</Title>
                 <Form
                     onSubmit={handleSubmit}
                     ref={formRef}
@@ -79,7 +79,13 @@ const RampList: React.FC<IPage> = ({ setPage }) => {
                                     tag="tempRampOne"
                                     width="47%"
                                     returnKeyType="next"
-                                    onSubmitEditing={() => refTimeRampTwo.current?.focus()}
+                                    onSubmitEditing={() => {
+                                        if(quantityRamps !== 1) refTimeRampTwo.current?.focus()
+                                        else {
+                                            formRef.current?.submitForm()
+                                            setPage(4)
+                                        }   
+                                    }}
                                     defaultValue={NRListFour.tempRampOne?.toString()}                                    
                                 />
                             </DoubleContainer>
@@ -101,7 +107,13 @@ const RampList: React.FC<IPage> = ({ setPage }) => {
                                     tag="tempRampTwo"
                                     width="47%"
                                     returnKeyType="next"
-                                    onSubmitEditing={() => refTimeRampThree.current?.focus()}
+                                    onSubmitEditing={() => {
+                                        if(quantityRamps !== 2) refTimeRampThree.current?.focus()
+                                        else {
+                                            formRef.current?.submitForm()
+                                            setPage(4)
+                                        }   
+                                    }}
                                     defaultValue={NRListFour.tempRampTwo?.toString()}                                    
                                 />
                             </DoubleContainer>
@@ -123,7 +135,13 @@ const RampList: React.FC<IPage> = ({ setPage }) => {
                                     tag="tempRampThree"
                                     width="47%"
                                     returnKeyType="next"
-                                    onSubmitEditing={() => refTimeRampFour.current?.focus()}
+                                    onSubmitEditing={() => {
+                                        if(quantityRamps !== 3) refTimeRampFour.current?.focus()
+                                        else {
+                                            formRef.current?.submitForm()
+                                            setPage(4)
+                                        }   
+                                    }}
                                     defaultValue={NRListFour.tempRampThree?.toString()}                                    
                                 />
                             </DoubleContainer>
@@ -145,7 +163,13 @@ const RampList: React.FC<IPage> = ({ setPage }) => {
                                     tag="tempRampFour"
                                     width="47%"
                                     returnKeyType="next"
-                                    onSubmitEditing={() => refTimeRampFive.current?.focus()}
+                                    onSubmitEditing={() => {
+                                        if(quantityRamps !== 4) refTimeRampFive.current?.focus()
+                                        else {
+                                            formRef.current?.submitForm()
+                                            setPage(4)
+                                        }   
+                                    }}
                                     defaultValue={NRListFour.tempRampFour?.toString()}                                    
                                 />
                             </DoubleContainer>
@@ -167,7 +191,10 @@ const RampList: React.FC<IPage> = ({ setPage }) => {
                                     tag="tempRampFive"
                                     width="47%"
                                     returnKeyType="next"
-                                    onSubmitEditing={() => formRef.current?.submitForm()}
+                                    onSubmitEditing={() => {
+                                        formRef.current?.submitForm()
+                                        setPage(4)
+                                    }}
                                     defaultValue={NRListFour.tempRampFive?.toString()}                                    
                                 />
                             </DoubleContainer>
@@ -179,14 +206,14 @@ const RampList: React.FC<IPage> = ({ setPage }) => {
                             width="47%"
                             onPress={() => {
                                 formRef.current?.submitForm()
-                                setPage(0)
+                                setPage(2)
                             }}
                         >Anterior</Button>
                         <Button
                             width="47%"
                             onPress={() => {
                                 formRef.current?.submitForm()
-                                setPage(2)
+                                setPage(4)
                             }}
                         >Próximo</Button>
                     </DoubleContainer>

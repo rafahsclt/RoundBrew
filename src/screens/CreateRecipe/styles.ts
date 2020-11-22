@@ -37,3 +37,11 @@ export const SliderText = styled.Text`
     font-size: 40px;
     padding-right: 10px;
 `
+
+export const ModalView = styled.View`
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px 0;
+    background: ${props => props.theme.colors.background};
+`

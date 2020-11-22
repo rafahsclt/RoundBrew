@@ -6,7 +6,7 @@ import Icon from 'react-native-vector-icons/Feather'
 
 import { Container, Text } from './styles'
 
-import logoImg from '../../assets/images/logo.png'
+import logoImg from '../../assets/images/light-maltum-logo.png'
 
 interface HeaderProps extends SwitchProps {
     title: string
@@ -15,7 +15,7 @@ interface HeaderProps extends SwitchProps {
 }
 
 const Header: React.FC<HeaderProps> = ({ title, iconName, hasSwitch, ...rest }) => {
-    const { colors } = useContext(ThemeContext) 
+    const { colors, path } = useContext(ThemeContext) 
     const { goBack } = useNavigation()
 
     return (
