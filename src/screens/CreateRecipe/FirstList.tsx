@@ -19,6 +19,7 @@ const FirstList: React.FC<IPage> = ({ setPage }) => {
     const { NRListOne, setNRListOne } = useRecipe()
 
     const yeastRef = useRef<TextInput>(null)
+    const boilRef = useRef<TextInput>(null)
     const brewRef = useRef<TextInput>(null)
     const maturationRef = useRef<TextInput>(null)
 
@@ -56,8 +57,16 @@ const FirstList: React.FC<IPage> = ({ setPage }) => {
                         name="Fermento"
                         tag="yeast"
                         returnKeyType="next"
-                        onSubmitEditing={() => brewRef.current?.focus()}
+                        onSubmitEditing={() => boilRef.current?.focus()}
                         defaultValue={NRListOne.yeast}                        
+                    />
+                    <Input
+                        ref={boilRef}
+                        name="Tempo de Fervura (min)"
+                        tag="boilTime"
+                        returnKeyType="next"
+                        onSubmitEditing={() => brewRef.current?.focus()}
+                        defaultValue={NRListOne.boilTime?.toString()}                        
                     />
                     <Input
                         ref={brewRef}

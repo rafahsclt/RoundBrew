@@ -3,7 +3,7 @@ export default interface IRecipe {
     boilTime: number
     brewTime: number
     maturationTime: number
-    yeast: string
+    yeast: string | undefined
     ramps: IRamps
     malts: IMalts
     hops: IHops
@@ -26,11 +26,11 @@ interface IRamps {
 
 interface IMalts {
     quantityMalts: number
-    nameMaltOne: number | undefined
-    nameMaltTwo: number | undefined
-    nameMaltThree: number | undefined
-    nameMaltFour: number | undefined
-    nameMaltFive: number | undefined
+    nameMaltOne: string | undefined
+    nameMaltTwo: string | undefined
+    nameMaltThree: string | undefined
+    nameMaltFour: string | undefined
+    nameMaltFive: string | undefined
     weightMaltOne: number | undefined
     weightMaltTwo: number | undefined
     weightMaltThree: number | undefined
@@ -40,11 +40,11 @@ interface IMalts {
 
 interface IHops {
     quantityHops: number
-    nameHopOne: number | undefined
-    nameHopTwo: number | undefined
-    nameHopThree: number | undefined
-    nameHopFour: number | undefined
-    nameHopFive: number | undefined
+    nameHopOne: string | undefined
+    nameHopTwo: string | undefined
+    nameHopThree: string | undefined
+    nameHopFour: string | undefined
+    nameHopFive: string | undefined
     weightHopOne: number | undefined
     weightHopTwo: number | undefined
     weightHopThree: number | undefined
